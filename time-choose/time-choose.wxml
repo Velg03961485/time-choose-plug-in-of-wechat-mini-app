@@ -1,0 +1,82 @@
+<!--components/time-shoose/time-choose.wxml-->
+<!-- <text>components/time-shoose/time-choose.wxml</text> -->
+<view wx:if="{{isShowBJ}}" catchtap='cancelTime' class='picker-blackBJ'> </view>
+<view wx:if="{{isShow}} " class='picker-chose {{isScreening[screeningNo]}}' >
+<view class='picker-chose-top'>
+  <view catchtap='choseData' class="chose-data {{isShowData==true?'chose-active':''}} " >
+    {{year}}年
+    <text wx:if="{{month<10}}">0</text>
+    {{month}}月
+    <text wx:if="{{day<10}}">0</text>
+    {{day}}日
+  </view> 
+<view catchtap='choseTime' style='margin-left:40rpx;' class="chose-data {{isShowTime==true?'chose-active':''}}">
+<text wx:if="{{hour<10}}">0</text>{{hour}} ：<text wx:if="{{minute<10}}">0</text>{{minute}} ：<text wx:if="{{second<10}}">0</text>{{second}}
+</view>
+</view>
+<!--选择器 -->
+<view class='selector-data' style="width: 750rpx; height: 430rpx;" wx:if="{{isShowData}}">
+<picker-view indicator-style="height: 40px;" style="width: 250rpx; height: 430rpx;" value="{{valueYear}}" bindchange="bindChangeYear">
+<picker-view-column>
+<view wx:for="{{years}}" wx:key="*this" style="line-height: 40px">
+<text class="{{valueYear==index?'picker-botRed':''}}" >{{item}}</text>
+</view>
+</picker-view-column>
+</picker-view>
+<picker-view indicator-style="height: 40px;" style="width: 250rpx; height: 430rpx;" value="{{valueMonth}}" bindchange="bindChangeMonth">
+<picker-view-column>
+<view wx:for="{{months}}" wx:key="*this" style="line-height: 40px">
+<text class="{{valueMonth==index?'picker-botRed':''}}" >
+<text wx:if="{{item<10}}">0</text>{{item}}
+</text>
+</view>
+</picker-view-column>
+</picker-view>
+<picker-view indicator-style="height: 40px;" style="width: 250rpx; height: 430rpx;" value="{{valueDay}}" bindchange="bindChangeDay">
+<picker-view-column>
+<view wx:for="{{days}}" wx:key="*this" style="line-height: 40px">
+<text class="{{valueDay==index?'picker-botRed':''}} " >
+<text wx:if="{{item<10}}">0</text>{{item}}
+</text>
+</view>
+</picker-view-column>
+</picker-view>
+</view>
+
+<picker-view wx:if="{{isShowTime}}" indicator-style="height: 40px;" style="width: 750rpx; height: 430rpx;" value="{{valueTime}}" bindchange="bindChangeTime">
+	<picker-view-column>
+		<view wx:for="{{hours}}" wx:key="*this" style="line-height: 40px;padding-left:30rpx;">
+			<text class="{{valueTime[0]==index?'picker-botRed':''}} ">
+				<text wx:if="{{item<10}}">0</text>{{item}}
+			</text>
+		</view>
+	</picker-view-column>
+
+	<picker-view-column style="line-height: 40px">
+	:
+	</picker-view-column>
+	<picker-view-column>
+		<view wx:for="{{minutes}}" wx:key="*this" style="line-height: 40px;padding-right:0rpx;">
+			<text class="{{valueTime[2]==index?'picker-botRed':''}} ">
+				<text wx:if="{{item<10}}">0</text>{{item}}
+			</text>
+		</view>
+	</picker-view-column>
+	<!-- 秒 -->
+	<picker-view-column style="line-height: 40px">
+	:
+	</picker-view-column>
+	<picker-view-column>
+		<view wx:for="{{seconds}}" wx:key="*this" style="line-height: 40px;padding-right:180rpx;">
+			<text class="{{valueTime[4]==index?'picker-botRed':''}} ">
+				<text wx:if="{{item<10}}">0</text>{{item}}
+			</text>
+		</view>
+	</picker-view-column>
+</picker-view>
+
+<view class='picker-chose-bottom'>
+	<view catchtap='cancelTime' style='border-right: 1px solid #E0E3E6;' class='picker-chose-bottom-view'>取消</view>
+	<view catchtap='sureTime' class="picker-chose-bottom-view">确定</view>
+</view>
+</view>
