@@ -82,9 +82,9 @@ data中
     });
   },
 
-<div align=center>![image](https://github.com/Velg03961485/time-choose-plug-in-of-wechat-mini-app/blob/master/img/b830938b65fddd409fbda6dcb157ee6.png)
+<div align=center>![image](https://github.com/Velg03961485/time-choose-plug-in-of-wechat-mini-app/blob/master/img/b830938b65fddd409fbda6dcb157ee6.png)</div>
 
-<div align=center><img src="http://goldsys.oss-cn-hangzhou.aliyuncs.com/1545824958137.jpg" width="50%" height="50%"></div>
+
 
 
 
