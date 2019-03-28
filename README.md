@@ -82,8 +82,9 @@ data中
     });
   },
 
+![image](https://github.com/Velg03961485/time-choose-plug-in-of-wechat-mini-app/blob/master/img/b830938b65fddd409fbda6dcb157ee6.png)
 
-https://github.com/Velg03961485/time-choose-plug-in-of-wechat-mini-app/blob/master/img/b830938b65fddd409fbda6dcb157ee6.png
+
 
 
 
